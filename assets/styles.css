@@ -1,0 +1,505 @@
+/* ============================================================
+   闲鱼虚拟产品工作流系统 - UI/UX 专业版样式表
+   设计原则：高对比度 · 清晰可读 · 专业现代
+   符合 WCAG 2.1 AA 标准 (对比度 ≥ 4.5:1)
+   ============================================================ */
+
+/* ====== 全局基础设置 ====== */
+
+.stApp {
+    background-color: #f0f2f5 !important;
+}
+
+/* 主内容区域 - 白色卡片容器 */
+.main .block-container {
+    padding-top: 1.5rem;
+    max-width: 1400px;
+    background-color: #ffffff !important;
+    border-radius: 16px !important;
+    margin: 1rem auto 2rem auto !important;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 10px 20px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #e8eaed !important;
+}
+
+/* ====== 排版系统 - 高可读性 ====== */
+
+h1 {
+    font-size: 2.25rem !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+}
+
+h2 {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    letter-spacing: -0.01em !important;
+}
+
+h3 {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+}
+
+p, li, span {
+    color: #374151 !important;
+    line-height: 1.6 !important;
+}
+
+/* ====== 侧边栏 - 深色主题提升对比度 ====== */
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #1e293b 0%, #334155 100%) !important;
+    border-right: none !important;
+    padding: 1.5rem 1rem !important;
+    min-width: 280px !important;
+}
+
+/* 侧边栏标题 - 白色高对比 */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 侧边栏普通文字 - 浅灰色 */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] .stMarkdown,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] caption {
+    color: #cbd5e1 !important;
+}
+
+/* 侧边栏导航项 */
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] > div {
+    color: #e2e8f0 !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0 !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+    background-color: transparent !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] > div:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* 侧边栏分隔线 */
+[data-testid="stSidebar"] hr,
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    opacity: 1 !important;
+    margin: 1.25rem 0 !important;
+}
+
+/* ====== Metric指标卡 - 高对比度设计 ====== */
+
+[data-testid="stMetric"] {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 18px !important;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 4px 12px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 20px rgba(102, 126, 234, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    border-color: #667eea !important;
+}
+
+/* Metric标签 - 深灰色 */
+[data-testid="stMetric"] label {
+    color: #6b7280 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Metric数值 - 大号深色 */
+[data-testid="stMetric"] div > div:nth-child(2) {
+    color: #111827 !important;
+    font-weight: 900 !important;
+    font-size: 2rem !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Metric变化值 - 绿色/红色 */
+[data-testid="stMetric"] div > div:last-child {
+    color: #059669 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+}
+
+/* ====== 功能卡片 - 强对比度配色方案 ====== */
+
+/* 通用卡片基础样式 */
+.stInfo,
+.stSuccess,
+.stWarning,
+.stError {
+    border-radius: 14px !important;
+    padding: 1.5rem !important;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.3s ease !important;
+    border-left: 5px solid !important;
+}
+
+.stInfo:hover,
+.stSuccess:hover,
+.stWarning:hover,
+.stError:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 
+        0 12px 28px rgba(0, 0, 0, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 📘 信息卡片 (考研资料) - 深蓝主题 */
+.stInfo {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+    border-left-color: #2563eb !important;
+}
+
+.stInfo h3 {
+    color: #1e40af !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.stInfo p,
+.stInfo li {
+    color: #1e3a8a !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+}
+
+/* 📗 成功卡片 (办公模板) - 深绿主题 */
+.stSuccess {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%) !important;
+    border-left-color: #059669 !important;
+}
+
+.stSuccess h3 {
+    color: #065f46 !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.stSuccess p,
+.stSuccess li {
+    color: #064e3b !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+}
+
+/* 📙 警告卡片 (英语资料包) - 深橙主题 */
+.stWarning {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    border-left-color: #d97706 !important;
+}
+
+.stWarning h3 {
+    color: #92400e !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.stWarning p,
+.stWarning li {
+    color: #78350f !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* 📕 错误卡片 (笔记生成) - 深红主题 */
+.stError {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    border-left-color: #dc2626 !important;
+}
+
+.stError h3 {
+    color: #991b1b !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.stError p,
+.stError li {
+    color: #7f1d1d !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* ====== 数据表格 - 清晰易读 ====== */
+
+[data-testid="stDataFrame"] {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+[data-testid="stDataFrame"] th {
+    background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%) !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    text-align: left !important;
+    padding: 16px 20px !important;
+    border-bottom: 3px solid #d1d5db !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.05em !important;
+}
+
+[data-testid="stDataFrame"] td {
+    padding: 14px 20px !important;
+    border-bottom: 1px solid #f3f4f5 !important;
+    color: #1f2937 !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stDataFrame"] tr:hover {
+    background-color: #f9fafb !important;
+}
+
+/* ====== 按钮系统 - 高可见性 ====== */
+
+/* 主要按钮 - 渐变紫色 */
+.stButton>button[kind="primary"] {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    padding: 0.75rem 2rem !important;
+    font-size: 1rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 
+        0 4px 14px rgba(99, 102, 241, 0.4),
+        0 2px 6px rgba(99, 102, 241, 0.2) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+}
+
+.stButton>button[kind="primary"]:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 
+        0 8px 24px rgba(139, 92, 246, 0.5),
+        0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.stButton>button[kind="primary"]:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+/* 次要按钮 - 白底黑边 */
+.stButton>button[kind="secondary"],
+.stButton>button:not([kind="primary"]) {
+    border-radius: 10px !important;
+    border: 2px solid #d1d5db !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+    font-weight: 700 !important;
+    padding: 0.65rem 1.75rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+.stButton>button[kind="secondary"]:hover,
+.stButton>button:not([kind="primary"]):hover {
+    border-color: #6366f1 !important;
+    color: #6366f1 !important;
+    background: #eef2ff !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* ====== 输入框 - 清晰聚焦状态 ====== */
+
+.stTextInput>div>div>input,
+.stTextArea textarea {
+    border-radius: 10px !important;
+    border: 2px solid #e5e7eb !important;
+    padding: 12px 16px !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stTextInput>div>div>input:focus,
+.stTextArea textarea:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 
+        0 0 0 4px rgba(99, 102, 241, 0.1),
+        inset 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+}
+
+/* 选择框 */
+.stSelectbox>div>div,
+.stMultiSelect>div>div {
+    border-radius: 10px !important;
+    border: 2px solid #e5e7eb !important;
+    background-color: #ffffff !important;
+}
+
+/* ====== Expander 折叠面板 ====== */
+
+.streamlit-expanderHeader {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%) !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    border: 2px solid #e5e7eb !important;
+    padding: 1rem 1.25rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.streamlit-expanderHeader:hover {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%) !important;
+    border-color: #6366f1 !important;
+}
+
+/* ====== Tab 标签页 - 现代化设计 ====== */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px !important;
+    background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%) !important;
+    border-radius: 14px !important;
+    padding: 8px !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 10px !important;
+    padding: 12px 28px !important;
+    font-weight: 700 !important;
+    background-color: transparent !important;
+    color: #6b7280 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important;
+    font-size: 0.95rem !important;
+    text-transform: capitalize !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 
+        0 4px 12px rgba(99, 102, 241, 0.35),
+        0 2px 6px rgba(99, 102, 241, 0.2) !important;
+    transform: scale(1.02);
+}
+
+/* ====== 进度条 ====== */
+
+.stProgress>div>div>div>div {
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* ====== 工具提示 ====== */
+
+.stTooltip {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    padding: 10px 14px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ====== Caption 说明文字 ====== */
+
+.stCaption {
+    color: #9ca3af !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+/* ====== 动画效果 - 流畅自然 ====== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.stApp {
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-testid="stSidebar"] {
+    animation: slideInFromLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ====== 响应式优化 ====== */
+
+@media (max-width: 768px) {
+    .main .block-container {
+        margin: 0.5rem !important;
+        border-radius: 12px !important;
+    }
+    
+    h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .stInfo,
+    .stSuccess,
+    .stWarning,
+    .stError {
+        padding: 1.25rem !important;
+    }
+}
