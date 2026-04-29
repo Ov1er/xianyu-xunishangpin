@@ -57,3 +57,6 @@ files/
 *.pdf
 *.docx
 *.xlsx
+
+# GitHub CLI config
+.gh_config/
